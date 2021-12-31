@@ -23,6 +23,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //La siguiente anotación es para validar la entrada de datos en nuestra base de datos
+    // Anotaciones: @NotEmpty, @Positive, @NotNull
     @NotEmpty(message = "El nombre no debe ser vacío")
     private String name;
     private String description;

@@ -37,19 +37,25 @@ public class ProductServiceMockTest {
 
         Mockito.when(productRepository.findById(1L))
                 .thenReturn(Optional.of(computer));
+        //La siguiente situación se dará cuando se actualice nuestro producto Mockito(de pruebas)
         Mockito.when(productRepository.save(computer)).thenReturn(computer);
 
     }
 
+    //Éste método realizara una busqueda del producto mockeado antes y...
     @Test
    public void whenValidGetID_ThenReturnProduct(){
+        //...al ejecutarse el siguiente método nos debe devolver...
         Product found = productService.getProduct(1L);
+        //...lo que le pedimos en el siguiente Assertions
        Assertions.assertThat(found.getName()).isEqualTo("computer");
 
    }
 
+   //Éste método nos validará si actualizando un producto se realiza correctamente
    @Test
    public void whenValidUpdateStock_ThenReturnNewStock(){
+        //Realizamos una prueba para la cual modificamos el valor de stock de nuestro producto Mockeado(de pruebas)
         Product newStock = productService.updateStock(1L,Double.parseDouble("8"));
         Assertions.assertThat(newStock.getStock()).isEqualTo(13);
    }

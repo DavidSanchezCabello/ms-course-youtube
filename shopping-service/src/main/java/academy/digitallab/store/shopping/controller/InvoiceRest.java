@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+//La siguiente anotación nos provee de una Interfaz de es de Lombok que sirve para implementar los log
+// de nuestra aplicación para que interactuando con otros componentes que nos brinda Spring Cloud
+// y asi poder hacer el tracy de nuestra aplicación.
 @Slf4j
 @RestController
 @RequestMapping("/invoices")

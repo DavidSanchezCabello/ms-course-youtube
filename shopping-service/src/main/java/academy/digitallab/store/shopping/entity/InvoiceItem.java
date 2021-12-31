@@ -23,7 +23,7 @@ public class InvoiceItem  {
     @Column(name = "product_id")
     private Long productId;
 
-
+    //Esta anotación nos permite usar este atributo pero no va ha ser registrado en nuestra base de datos
     @Transient
     private Double subTotal;
 

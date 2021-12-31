@@ -32,6 +32,7 @@ public class ProductRepositoryMockTest {
 
         List<Product> founds= productRepository.findByCategory(product01.getCategory());
 
+        // Evaluación que queremos comprobar
         Assertions.assertThat(founds.size()).isEqualTo(3);
 
 
