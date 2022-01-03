@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//De este modo indicamos que vamops a consumir el microservicio costumer-service NOTA: también debemos añadir en la clase principal la anotación @EnableFeignClients para poder hacer uso de esta
+//De este modo indicamos que vamos a consumir el microservicio costumer-service NOTA: también debemos añadir en la clase principal la anotación @EnableFeignClients para poder hacer uso de ésta.
+// NOTA: el parámetro fallback es el objeto que se devolverá cuando este microservicio falle.
 @FeignClient(name = "customer-service", fallback = CustomerHystrixFallbackFactory.class)
 public interface CustomerClient {
 

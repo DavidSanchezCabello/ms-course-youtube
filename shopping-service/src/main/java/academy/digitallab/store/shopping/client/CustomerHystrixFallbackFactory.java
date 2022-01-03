@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CustomerHystrixFallbackFactory  implements CustomerClient{
+    // Éste método no proporcionará un plan 'B' en caso de que nuestro microservicio no funcione o devuelva error, en cuyos casos se activará esta ResponseEntity que devolverá el objeto vacío.
     @Override
     public ResponseEntity<Customer> getCustomer(long id) {
         Customer customer = Customer.builder()
