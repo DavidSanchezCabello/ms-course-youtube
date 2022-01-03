@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//De este modo indicamos que vamops a consumir el microservicio costumer-service NOTA: también debemos añadir en la clase principal la anotación @EnableFeignClients para poder hacer uso de esta
 @FeignClient(name = "customer-service", fallback = CustomerHystrixFallbackFactory.class)
 public interface CustomerClient {
 
