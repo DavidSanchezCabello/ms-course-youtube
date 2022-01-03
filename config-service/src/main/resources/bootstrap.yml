@@ -7,6 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/DavidSanchezCabello/ms-course-youtube.git
+          # Gracias a la instrucción seachPaths conseguimos que nuestro servicio de configuración revise en el archivo que le pasemos. La configuración de cada uno de nuestros microservicios
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
